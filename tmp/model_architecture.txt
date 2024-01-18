@@ -1,0 +1,6 @@
+MyModel(
+  (linear1): Linear(in_features=2, out_features=10, bias=True)
+  (relu): ReLU()
+  (linear2): Linear(in_features=10, out_features=1, bias=True)
+  (sigmoid): Sigmoid()
+)
