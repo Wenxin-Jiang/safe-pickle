@@ -51,8 +51,13 @@ def get_models():
         for task in hf_domains[domain]:
             models_list[domain][task] = []
             num_models[domain][task] = 0
+<<<<<<< HEAD
             # models = list(api.list_models(filter=task, sort="downloads", direction=-1, limit=100))
             models = list(api.list_models(filter=task, sort="lastModified", direction=-1, limit=100))
+=======
+            models = list(api.list_models(filter=task, sort="downloads", direction=-1, limit=100))
+            
+>>>>>>> 2e5bf891f4dc895dee1932e0e2f31cb3fe4d1f7d
             
             num_models[domain][task] += len(models)
             for model in tqdm(models):
@@ -164,7 +169,11 @@ def plot_distribution_pt_st():
     sizes = list(distribution_pt_st.values())
     ax.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140, textprops={'fontsize': 20})
     ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+<<<<<<< HEAD
     plt.title('Distribution of models (Pytorch and Safetensors)', fontsize=22, pad=20)
+=======
+    plt.title('Distribution of models (Pytorch and Safetensors)', fontsize=22)
+>>>>>>> 2e5bf891f4dc895dee1932e0e2f31cb3fe4d1f7d
     plt.savefig('distribution_pt_st.png')
     return
 
